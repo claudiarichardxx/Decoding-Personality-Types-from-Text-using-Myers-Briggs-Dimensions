@@ -13,7 +13,17 @@ To  install the required libraries, run this:
 pip install -r requirements.txt
 ```
 # Quickstart
-A notebook file to demonstrate the usage can be found in usage/sample.ipynb
+The following script can also found in usage.ipynb. A sample run on google colab can be found in colab_run.ipynb. The main.py file has a tkinter GUI (It **cannot be run on Codespace** but can be run on the local system.). We suggest running the notebook file for a test run.
+```
+from IPython.display import display, HTML
+from pipeline import Pipeline
+
+text = '''I really enjoy being alone these days'''
+pp = Pipeline()
+htmls = pp.pipeline(text)
+attributions = ''.join(htmls)
+display(HTML(attributions))
+```
 
 # Architecture
 The project involves building a multilabel classification model to classify input sentences into four dimensions of the Myers-Briggs Type Indicator (MBTI) personality framework. 
