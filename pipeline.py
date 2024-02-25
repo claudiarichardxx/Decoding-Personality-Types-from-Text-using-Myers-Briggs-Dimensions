@@ -32,7 +32,7 @@ class Pipeline:
                 htmls.append(html+'<br><br>')
             #display(HTML(html))
             else:
-                htmls.append('<br>'Label: Inconclusive'<br>')
+                htmls.append('<br>Label: Inconclusive<br>')
         return htmls
 
     def checkThrehold(self, attributions, label, threshold = [-0.3, 0.6]):
