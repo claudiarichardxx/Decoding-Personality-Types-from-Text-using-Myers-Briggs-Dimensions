@@ -26,4 +26,6 @@ The base model used for finetuning is the sentence-transformers/bert-base-nli-me
 1. The 'Transformers' library from Huggingface is used for Training the model.
 2. The dataset used for training has been uploaded to the Huggingface hub and can be accessed at: [ClaudiaRichard/mbti_classification_v2](https://huggingface.co/datasets/ClaudiaRichard/mbti_classification_v2).
 3. The finetuned model weights can be accessed at: [ClaudiaRichard/mbti-bert-nli-finetuned_v2](https://huggingface.co/)
-4. The script used for training can be found in setup/train.py
+4. The model traning was done on Google Colab and the script used for training can be found in setup/modelTraining.ipynb
+5. The script used to split and upload the data can be found in setup/datasetCreation.ipynb
+   
