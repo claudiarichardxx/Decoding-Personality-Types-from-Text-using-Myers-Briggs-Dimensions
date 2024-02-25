@@ -13,7 +13,7 @@ To  install the required libraries, run this:
 pip install -r requirements.txt
 ```
 # Quickstart
-The following script can also found in usage.ipynb. A sample run on google colab can be found in colab_run.ipynb. The main.py file has a tkinter GUI (It **cannot be run on Codespace** but can be run on the local system.). We suggest running the notebook file for a test run.
+The following script can also found in usage.ipynb. A sample run on google colab can be found in colab_run.ipynb. The main.py file has a tkinter GUI (It **cannot be executed on Codespace** but can be executed on the local system.). We suggest running the notebook file for a test run.
 ```
 from IPython.display import display, HTML
 from pipeline import Pipeline
