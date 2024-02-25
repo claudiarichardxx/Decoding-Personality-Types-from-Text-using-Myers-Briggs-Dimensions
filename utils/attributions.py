@@ -2,7 +2,7 @@ from captum.attr import LayerIntegratedGradients
 import torch
 
 class Attributions:
-    
+
     def calculate(self, input_ids, token_type_ids, attention_mask):
     # convert back to list of text
         return self.model(input_ids, token_type_ids, attention_mask)[0]
