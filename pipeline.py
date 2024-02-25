@@ -20,7 +20,7 @@ class Pipeline:
         tokens = pred.tokenizer.convert_ids_to_tokens(self.encoded["input_ids"][0])
         for i in range(0,4):
             attributions = attribute.getAttributions(self.encoded, i, int(self.labels[i]))
-            if(checkThrehold(self, attributions, int(self.labels[i]))):
+            if(self.checkThreshold(self, attributions, int(self.labels[i]))):
 
                 html = visualize.attributions_to_html(tokens, attributions.numpy()[0], int(self.labels[i]))
                 htmls.append('Label: '+ labs[i][int(self.labels[i])])
@@ -39,14 +39,14 @@ class Pipeline:
 
         if(label == 0):
             if(any(attributions[0]<= threshold[0])):
-            return True
+                return True
             else:
-            return False
+                return False
         if(label == 1):
             if(any(attributions[0] >= threshold[1])):
-            return True
+                return True
             else:
-            return False
+                return False
 
     def pipelineV2(self, text):
         labs = {0: ['Introvert', 'Extrovert'], 1: ['Intuition', 'Sensing'], 2: ['Thinking', 'Feeling'], 3: ['Judging', 'Perceiving']}
