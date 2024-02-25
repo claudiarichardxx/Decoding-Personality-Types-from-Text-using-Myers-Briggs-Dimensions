@@ -22,7 +22,7 @@ class Pipeline:
             attributions = attribute.getAttributions(self.encoded, i, int(self.labels[i]))
             if(self.checkThreshold(self, attributions, int(self.labels[i]))):
 
-                html = visualize.attributions_to_html(tokens, attributions.numpy()[0], int(self.labels[i]))
+                html = visualize.attributions_to_html(tokens, attributions.numpy()[0])
                 htmls.append('Label: '+ labs[i][int(self.labels[i])])
                 label_interpret = f""" <span style="background-color: {Color('cyan').hex}">{labs[i][0]}</span> <span style="background-color: {Color('violet').hex}">{labs[i][1]}</span>"""
                 htmls.append('<br>' + label_interpret+ '<br>')
