@@ -2,8 +2,13 @@ from captum.attr import LayerIntegratedGradients
 import torch
 
 class Attributions:
+    
+    def calculate(self, input_ids, token_type_ids, attention_mask):
+    # convert back to list of text
+        return self.model(input_ids, token_type_ids, attention_mask)[0]
 
     def initialize(self, model):
+        self.model = model
         self.lig = LayerIntegratedGradients(self.calculate, model.bert.embeddings)
 
     def getAttributions(self, encoded, target):

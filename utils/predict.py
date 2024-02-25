@@ -5,10 +5,7 @@ import numpy as np
 
 class Predictions:
     
-    def calculate(self, input_ids, token_type_ids, attention_mask):
-    # convert back to list of text
-        return self.model(input_ids, token_type_ids, attention_mask)[0]
-
+    
     def load_model(self, model_name):
 
         self.model = AutoModelForSequenceClassification.from_pretrained(model_name)
