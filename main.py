@@ -1,9 +1,50 @@
+import tkinter as tk
+import webbrowser
 from pipeline import Pipeline
+import tkinter as tk
+from tkinter import ttk
+import threading
+
+def classify():
+    html_content = html_text.get("1.0", "end-1c")
+    # Start the progress bar in a new thread
+    threading.Thread(target=progress_bar_start).start()
+
+    x = threading.Thread(target = my_fn, args=(1, html_content)).start()
+
+def my_fn(args, html_content):
+
+    pp = Pipeline()
+    htmls = pp.pipeline(html_content)
+    page = ''.join(htmls)
+    with open("temp.html", "w") as f:
+        f.write(page)
+
+    # Open browser after function is completed
+    threading.Thread(target=open_browser_after_delay).start()
+
+def progress_bar_start():
+    # Start the progress bar
+    progress_bar.start(10)
+
+def open_browser_after_delay():
+
+    webbrowser.open("temp.html")
+    # Stop the progress bar
+    progress_bar.stop()
+
+root = tk.Tk()
+root.title("MBTI Classification")
+
+html_text = tk.Text(root, height=30, width=100)
+html_text.pack(pady=10)
 
 
+open_button = tk.Button(root, text="Calculate Results", command=classify)
+open_button.pack(pady=5)
 
-text = '''I first thought about this when I was thinking about how how I was using music as a means of escape while working in my lab and my labmate accused me of damaging my ears. He didn't realize that at that moment I needed it as much as I needed oxygen to breathe. The circumstances of my life seemed to be holding me back from peace and joy and I needed a quick respite. Of course, nothing really changed. But nevertheless, I was able to focus on the present and not allow overwhelming feelings to cloud me. '''
-pp = Pipeline()
-pp.pipelineV2(text)
-    
+# Progress bar
+progress_bar = ttk.Progressbar(root, orient="horizontal", length=200, mode="indeterminate")
+progress_bar.pack(pady=10)
 
+root.mainloop()

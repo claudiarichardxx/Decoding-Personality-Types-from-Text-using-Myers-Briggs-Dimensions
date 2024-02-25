@@ -5,3 +5,9 @@ iterative-stratification
 pandas
 scikit-learn
 datasets
+colour
+ipython
+fastapi
+pydantic-settings
+tkhtmlview
+tkinter

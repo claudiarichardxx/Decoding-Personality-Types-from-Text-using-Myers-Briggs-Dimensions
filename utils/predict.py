@@ -3,13 +3,21 @@ from transformers import AutoModelForSequenceClassification
 import torch
 import numpy as np
 
-class Predictions:
-    
-    
-    def load_model(self, model_name):
 
-        self.model = AutoModelForSequenceClassification.from_pretrained(model_name)
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+class Predictions:
+
+    def load_model(self, model_name):
+        try:
+            self.model = AutoModelForSequenceClassification.from_pretrained("model/bert/")
+            self.tokenizer = AutoTokenizer.from_pretrained("model/tokenizer/")
+        except:
+            self.model = AutoModelForSequenceClassification.from_pretrained(model_name)
+            self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+            self.model.save_pretrained("model/bert/")
+            self.tokenizer.save_pretrained("model/tokenizer/")
+        #self.model = settings.model
+        #self.tokenizer = settings.tokenizer
         #return  model, tokenizer
 
     def predict_labels(self, text):
