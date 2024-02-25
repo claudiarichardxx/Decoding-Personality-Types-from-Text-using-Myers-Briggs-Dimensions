@@ -1,9 +1,22 @@
 # Decoding-Personality-Types-from-Text-using-Myers-Briggs-Dimensions
 The aim of this project is to classify personality types from written text and also to extract important words that contributed to the classification.
-# Installation
 
+# Installation
+To  clone this repository:
+```
+git clone https://github.com/claudiarichardxx/Decoding-Personality-Types-from-Text-using-Myers-Briggs-Dimensions.git
+
+```
+
+# To setup the environment:
+To  install the required libraries, run this:
+```
+pip install -r requirements.txt
+
+```
 # Quickstart
 A notebook file to demonstrate the usage can be found in usage/sample.ipynb
+
 # Architecture
 The project involves building a multilabel classification model to classify input sentences into four dimensions of the Myers-Briggs Type Indicator (MBTI) personality framework. 
 1. The model utilizes the BERT architecture, a transformer-based model, known for its effectiveness in capturing contextual information in text data.
