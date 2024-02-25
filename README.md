@@ -13,7 +13,17 @@ To  install the required libraries, run this:
 pip install -r requirements.txt
 ```
 # Quickstart
-A notebook file to demonstrate the usage can be found in usage/sample.ipynb
+The following script can also found in usage.ipynb. A sample run on google colab can be found in colab_run.ipynb. The main.py file has a tkinter GUI (It **cannot be executed on Codespace** but can be executed on the local system.). We suggest running the notebook file for a test run.
+```
+from IPython.display import display, HTML
+from pipeline import Pipeline
+
+text = '''I really enjoy being alone these days'''
+pp = Pipeline()
+htmls = pp.pipeline(text)
+attributions = ''.join(htmls)
+display(HTML(attributions))
+```
 
 # Architecture
 The project involves building a multilabel classification model to classify input sentences into four dimensions of the Myers-Briggs Type Indicator (MBTI) personality framework. 
@@ -26,4 +36,6 @@ The base model used for finetuning is the sentence-transformers/bert-base-nli-me
 1. The 'Transformers' library from Huggingface is used for Training the model.
 2. The dataset used for training has been uploaded to the Huggingface hub and can be accessed at: [ClaudiaRichard/mbti_classification_v2](https://huggingface.co/datasets/ClaudiaRichard/mbti_classification_v2).
 3. The finetuned model weights can be accessed at: [ClaudiaRichard/mbti-bert-nli-finetuned_v2](https://huggingface.co/)
-4. The script used for training can be found in setup/train.py
+4. The model traning was done on Google Colab and the script used for training can be found in setup/modelTraining.ipynb
+5. The script used to split and upload the data can be found in setup/datasetCreation.ipynb
+   
