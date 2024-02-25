@@ -24,6 +24,6 @@ The project involves building a multilabel classification model to classify inpu
 # Training
 The base model used for finetuning is the sentence-transformers/bert-base-nli-mean-tokens model (an adaptation of the Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks paper).
 1. The 'Transformers' library from Huggingface is used for Training the model.
-2. The dataset used for training has been uploaded to the Huggingface hub and can be accessed at: ClaudiaRichard/mbti_classification_v2.
-3. The finetuned model weights can be accessed at: ClaudiaRichard/mbti-bert-nli-finetuned_v2
+2. The dataset used for training has been uploaded to the Huggingface hub and can be accessed at: [ClaudiaRichard/mbti_classification_v2](https://huggingface.co/datasets/ClaudiaRichard/mbti_classification_v2).
+3. The finetuned model weights can be accessed at: [ClaudiaRichard/mbti-bert-nli-finetuned_v2](https://huggingface.co/)
 4. The script used for training can be found in setup/train.py
