@@ -5,14 +5,12 @@ The aim of this project is to classify personality types from written text and a
 To  clone this repository:
 ```
 git clone https://github.com/claudiarichardxx/Decoding-Personality-Types-from-Text-using-Myers-Briggs-Dimensions.git
-
 ```
 
 # To setup the environment:
 To  install the required libraries, run this:
 ```
 pip install -r requirements.txt
-
 ```
 # Quickstart
 A notebook file to demonstrate the usage can be found in usage/sample.ipynb
