@@ -26,12 +26,12 @@ display(HTML(attributions))
 ```
 Arguments to the pp.pipeline function:
 1. text: Any self descriptive text or paragraph
-2. threshold: Array of 2 values [class_0_threshold, class_1_threshold]; default = [-3, 0.6]
+2. threshold: Array of 2 values [class_0_threshold, class_1_threshold]; default = [-0.3, 0.6]
    
 # Architecture
 The project involves building a multilabel classification model to classify input sentences into four dimensions of the Myers-Briggs Type Indicator (MBTI) personality framework. 
 1. The model utilizes the BERT architecture, a transformer-based model, known for its effectiveness in capturing contextual information in text data.
-2. After classifying the input sentences into the four dimensions of MBTI, the Integrated Gradients method is applied to determine the attribution of each token to each label. Integrated Gradients provides insights into the importance of each token in the prediction by calculating the contribution of each token to the classification decision.
+2. After classifying the input sentences into the four dimensions of MBTI, the Integrated Gradients method is applied to determine the attribution of each token to each label. Integrated Gradients provides insights into the importance of each token in the prediction by calculating the contribution of each token to the classification decision. The values obtained are in the range [-1,1].
 3. Furthermore, a threshold is defined, and if the attribution of all tokens for a particular class is less than this threshold, the corresponding label is discarded. This step helps in ensuring that only significant attributions contribute to the final classification decision, improving the reliability of the model's predictions. The default threshold is set as -0.3 for class 0 and 0.6 for class 1. It can be changed by setting the threshold when calling the pipeline function. 
    
 # Training
