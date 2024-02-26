@@ -20,9 +20,10 @@ class Pipeline:
         tokens = pred.tokenizer.convert_ids_to_tokens(self.encoded["input_ids"][0])
         for i in range(0,4):
             attributions = attribute.getAttributions(self.encoded, i)
-            if(self.checkThreshold(self, attributions, int(self.labels[i]))):
+            print(self.labels)
+            if(self.checkThreshold(self, attributions, int(self.labels[0][i]))):
 
-                html = visualize.attributions_to_html(tokens, attributions.numpy()[0], int(self.labels[i]))
+                html = visualize.attributions_to_html(tokens, attributions.numpy()[0], int(self.labels[0][i]))
                 htmls.append('Label: '+ labs[i][int(self.labels[i])])
                 label_interpret = f""" <span style="background-color: {Color('cyan').hex}">{labs[i][0]}</span> <span style="background-color: {Color('violet').hex}">{labs[i][1]}</span>"""
                 htmls.append('<br>' + label_interpret+ '<br>')
