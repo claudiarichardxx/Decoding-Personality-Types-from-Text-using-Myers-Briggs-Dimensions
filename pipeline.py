@@ -7,7 +7,7 @@ from colour import Color
 
 class Pipeline:
 
-    def pipeline(self, text):
+    def pipeline(self, text, threshold):
         labs = {0: ['Introvert', 'Extrovert'], 1: ['Intuition', 'Sensing'], 2: ['Thinking', 'Feeling'], 3: ['Judging', 'Perceiving']}
         pred = Predictions()
         attribute = Attributions()
@@ -22,9 +22,9 @@ class Pipeline:
             attributions = attribute.getAttributions(self.encoded, i)
             #print(self.labels)
             #self.labels = list(self.labels)
-            if(self.checkThreshold(attributions, label = int(labels[i]))):
+            if(self.checkThreshold(attributions, label = int(labels[i]), threshold = threshold)):
 
-                html = visualize.attributions_to_html(tokens, attributions.numpy()[0], label = int(labels[i]))
+                html = visualize.attributions_to_html(tokens, attributions.numpy()[0], label = int(labels[i]), threshold = threshold)
                 htmls.append('Label: '+ labs[i][int(labels[i])])
                 label_interpret = f""" <span style="background-color: {Color('cyan').hex}">{labs[i][0]}</span> <span style="background-color: {Color('violet').hex}">{labs[i][1]}</span>"""
                 htmls.append('<br>' + label_interpret+ '<br>')
