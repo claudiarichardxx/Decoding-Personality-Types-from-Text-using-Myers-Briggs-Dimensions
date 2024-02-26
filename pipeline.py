@@ -7,7 +7,7 @@ from colour import Color
 
 class Pipeline:
 
-    def pipeline(self, text, threshold):
+    def pipeline(self, text, threshold = [-0.3, 0.6]):
         labs = {0: ['Introvert', 'Extrovert'], 1: ['Intuition', 'Sensing'], 2: ['Thinking', 'Feeling'], 3: ['Judging', 'Perceiving']}
         pred = Predictions()
         attribute = Attributions()
