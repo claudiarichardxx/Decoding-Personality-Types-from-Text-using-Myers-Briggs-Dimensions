@@ -40,5 +40,16 @@ The base model used for finetuning is the sentence-transformers/bert-base-nli-me
 2. The dataset used for training has been uploaded to the Huggingface hub and can be accessed at: [ClaudiaRichard/mbti_classification_v2](https://huggingface.co/datasets/ClaudiaRichard/mbti_classification_v2).
 3. The finetuned model weights can be accessed at: [ClaudiaRichard/mbti-bert-nli-finetuned_v2](https://huggingface.co/)
 4. The model traning was done on Google Colab and the script used for training can be found in setup/modelTraining.ipynb
-5. The script used to split and upload the data can be found in setup/datasetCreation.ipynb
+5. Training arguments: 
+6. The script used to split and upload the data can be found in setup/datasetCreation.ipynb
+
+# Training Arguments
+
+1. batch size : 8
+2. base model : [bert-base-nli-mean-tokens](https://huggingface.co/sentence-transformers/bert-base-nli-mean-tokens)
+3. learning rate : 3e-5
+4. epochs : 2
+5. weight decay : 0.01
+6. gradient accumulation steps : 2
+7. metric to choose best model = F1 Score
    
