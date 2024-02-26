@@ -35,7 +35,7 @@ class Pipeline:
                 htmls.append('<br>Label: Inconclusive<br>')
         return htmls
 
-    def checkThrehold(self, attributions, label, threshold = [-0.3, 0.6]):
+    def checkThreshold(self, attributions, label, threshold = [-0.3, 0.6]):
 
         if(label == 0):
             if(any(attributions[0]<= threshold[0])):
